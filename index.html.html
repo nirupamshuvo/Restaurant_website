@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gusto Restaurant | Fine Dining Experience</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍽️</text></svg>">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="#home" class="logo">Gusto<span>Restaurant</span></a>
+            
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#menu" class="nav-link">Menu</a></li>
+                <li><a href="#reservation" class="nav-link">Reservation</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>Savor the Flavor Experience</h1>
+            <p>Indulge in a culinary journey where tradition meets innovation. Our chefs craft exceptional dishes using the finest locally-sourced ingredients.</p>
+            <a href="#reservation" class="btn">Book a Table</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Story</h2>
+                <p>Established in 2005, Gusto Restaurant has been serving exceptional cuisine with a passion for culinary excellence.</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>A Decade of Culinary Excellence</h3>
+                    <p>Founded by award-winning Chef Marco Rossi, Gusto Restaurant brings the authentic flavors of Italian cuisine with a modern twist. Our philosophy is simple: use the freshest ingredients to create memorable dining experiences.</p>
+                    <p>Every dish tells a story, from our handcrafted pasta to our wood-fired pizzas. We source our ingredients from local farmers and producers, ensuring quality and supporting our community.</p>
+                    <a href="#menu" class="btn" style="margin-top: 20px;">View Our Menu</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1554679665-f5537f187268?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Elegant restaurant interior with warm lighting and comfortable seating">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Menu</h2>
+                <p>Discover our carefully crafted menu featuring seasonal specialties and timeless classics.</p>
+            </div>
+            
+            <div class="menu-categories">
+                <button class="category-btn active" data-category="all" aria-label="Show all menu items">All</button>
+                <button class="category-btn" data-category="appetizers" aria-label="Show appetizers">Appetizers</button>
+                <button class="category-btn" data-category="mains" aria-label="Show main courses">Main Courses</button>
+                <button class="category-btn" data-category="desserts" aria-label="Show desserts">Desserts</button>
+                <button class="category-btn" data-category="drinks" aria-label="Show drinks">Drinks</button>
+            </div>
+            
+            <div class="menu-items" id="menuItemsContainer">
+                <!-- Menu items will be populated by JavaScript -->
+                <div class="loading-menu">Loading menu...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="reservation">
+        <div class="container">
+            <div class="section-title">
+                <h2>Make a Reservation</h2>
+                <p>Book your table for an unforgettable dining experience</p>
+            </div>
+            
+            <form class="reservation-form" id="reservationForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" id="name" name="name" required aria-label="Your name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" id="email" name="email" required aria-label="Your email address">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="tel" placeholder="Phone Number" id="phone" name="phone" required aria-label="Your phone number">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" placeholder="Number of Guests" id="guests" name="guests" min="1" max="20" required aria-label="Number of guests">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="date" id="date" name="date" required aria-label="Reservation date">
+                    </div>
+                    <div class="form-group">
+                        <select id="time" name="time" required aria-label="Reservation time">
+                            <option value="">Select Time</option>
+                            <option value="17:00">5:00 PM</option>
+                            <option value="18:00">6:00 PM</option>
+                            <option value="19:00">7:00 PM</option>
+                            <option value="20:00">8:00 PM</option>
+                            <option value="21:00">9:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <textarea placeholder="Special Requests (allergies, celebrations, etc.)" id="requests" name="requests" rows="4" aria-label="Special requests"></textarea>
+                </div>
+                
+                <button type="submit" class="btn" id="submitBtn">Book Now</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">Gusto Restaurant</div>
+                    <p>Experience fine dining at its best. We combine traditional recipes with modern techniques to create unforgettable meals.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Visit our Instagram page"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Visit our Twitter page"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Visit our TripAdvisor page"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Gourmet Street, Food City, FC 10001</p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> info@gustorestaurant.com</p>
+                    <p><i class="fas fa-fax"></i> (123) 456-7891</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Opening Hours</h3>
+                    <p><strong>Monday - Thursday:</strong> 5PM - 10PM</p>
+                    <p><strong>Friday - Saturday:</strong> 4PM - 11PM</p>
+                    <p><strong>Sunday:</strong> 12PM - 8PM</p>
+                    <p><strong>Holiday Hours:</strong> Please call ahead</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Gusto Restaurant. All rights reserved. | <a href="#" style="color: #ff9; text-decoration: underline;">Privacy Policy</a> | <a href="#" style="color: #ff9; text-decoration: underline;">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Scroll back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript Files -->
+    <script src="script.js"></script>
+</body>
+</html>
